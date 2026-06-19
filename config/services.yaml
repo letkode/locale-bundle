@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Letkode\LocaleBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/LetkodeLocaleBundle.php'
+            - '../src/DependencyInjection/'
