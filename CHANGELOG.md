@@ -11,10 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.1] - 2026-06-19
+## [1.0.2] - 2026-06-19
 
 ### Fixed
 - Replace incorrect `getConfiguration()` override with `configure(DefinitionConfigurator)` — the correct `AbstractBundle` API for defining bundle config schema
+
+---
+
+## [1.0.1] - 2026-06-19
+
+> **Note:** This tag was published but its Packagist zip was cached before correction. Use `1.0.2` instead.
+
+### Added
+- Symfony Flex recipe for auto-configuration: `manifest.json` registers the bundle and copies `config/packages/letkode_locale.yaml` with `APP_DEFAULT_LOCALE` and `APP_SUPPORTED_LOCALES` env vars
 
 ---
 
@@ -33,5 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PHP `^8.4`
 - Symfony `^7.0 || ^8.0`
 
-[Unreleased]: https://github.com/letkode/locale-bundle/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/letkode/locale-bundle/releases/tag/v1.0.0
+[Unreleased]: https://github.com/letkode/locale-bundle/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/letkode/locale-bundle/compare/1.0.1...1.0.2
+[1.0.1]: https://github.com/letkode/locale-bundle/compare/1.0.0...1.0.1
+[1.0.0]: https://github.com/letkode/locale-bundle/releases/tag/1.0.0
