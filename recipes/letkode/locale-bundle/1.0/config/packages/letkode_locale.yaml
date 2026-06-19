@@ -1,0 +1,3 @@
+letkode_locale:
+    default_locale: '%env(APP_DEFAULT_LOCALE)%'
+    supported_locales: '%env(json:APP_SUPPORTED_LOCALES)%'
