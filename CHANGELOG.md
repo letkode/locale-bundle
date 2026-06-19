@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] - 2026-06-19
+
+### Fixed
+- Replace incorrect `getConfiguration()` override with `configure(DefinitionConfigurator)` — the correct `AbstractBundle` API for defining bundle config schema
+
+---
+
 ## [1.0.0] - 2026-06-19
 
 ### Added
