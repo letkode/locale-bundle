@@ -16,10 +16,7 @@ final class LetkodeLocaleBundle extends AbstractBundle
         $definition->rootNode()
             ->children()
                 ->scalarNode('default_locale')->defaultValue('en')->end()
-                ->arrayNode('supported_locales')
-                    ->useAttributeAsKey('code')
-                    ->scalarPrototype()->end()
-                ->end()
+                ->variableNode('supported_locales')->defaultValue([])->end()
             ->end()
         ;
     }
