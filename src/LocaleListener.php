@@ -5,11 +5,9 @@ declare(strict_types=1);
 namespace Letkode\LocaleBundle;
 
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 
-final readonly class LocaleListener implements EventSubscriberInterface
+final readonly class LocaleListener
 {
     public function __construct(
         #[Autowire('%letkode.locale.default_locale%')]
@@ -17,13 +15,6 @@ final readonly class LocaleListener implements EventSubscriberInterface
         #[Autowire('%letkode.locale.supported_locales%')]
         private array $supportedLocales,
     ) {
-    }
-
-    public static function getSubscribedEvents(): array
-    {
-        return [
-            KernelEvents::REQUEST => ['onKernelRequest', 15],
-        ];
     }
 
     public function onKernelRequest(RequestEvent $event): void

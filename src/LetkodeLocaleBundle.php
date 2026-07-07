@@ -17,6 +17,7 @@ final class LetkodeLocaleBundle extends AbstractBundle
             ->children()
                 ->scalarNode('default_locale')->defaultValue('en')->end()
                 ->variableNode('supported_locales')->defaultValue([])->end()
+                ->integerNode('listener_priority')->defaultValue(15)->end()
             ->end()
         ;
     }
@@ -27,5 +28,6 @@ final class LetkodeLocaleBundle extends AbstractBundle
 
         $builder->setParameter('letkode.locale.default_locale', $config['default_locale']);
         $builder->setParameter('letkode.locale.supported_locales', $config['supported_locales']);
+        $builder->setParameter('letkode.locale.listener_priority', $config['listener_priority']);
     }
 }

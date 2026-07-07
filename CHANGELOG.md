@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.4] - 2026-07-07
+
+### Added
+- `listener_priority` config option to make `LocaleListener`'s `kernel.request` priority configurable (default `15`, matching the previous hardcoded value)
+
+### Changed
+- `LocaleListener` is no longer an `EventSubscriberInterface`; it's now registered via a `kernel.event_listener` tag in `services.yaml` so its priority can be resolved from the `letkode.locale.listener_priority` parameter
+
+---
+
 ## [1.0.3] - 2026-06-19
 
 ### Fixed
@@ -49,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PHP `^8.4`
 - Symfony `^7.0 || ^8.0`
 
-[Unreleased]: https://github.com/letkode/locale-bundle/compare/1.0.3...HEAD
+[Unreleased]: https://github.com/letkode/locale-bundle/compare/1.0.4...HEAD
+[1.0.4]: https://github.com/letkode/locale-bundle/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/letkode/locale-bundle/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/letkode/locale-bundle/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/letkode/locale-bundle/compare/1.0.0...1.0.1

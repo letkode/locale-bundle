@@ -29,6 +29,7 @@ Create `config/packages/letkode_locale.yaml`:
 letkode_locale:
     default_locale: '%env(APP_DEFAULT_LOCALE)%'
     supported_locales: '%env(json:APP_SUPPORTED_LOCALES)%'
+    listener_priority: 15 # optional, defaults to 15
 ```
 
 Add the corresponding `.env` variables:
@@ -57,7 +58,7 @@ public function doSomething(): void
 
 ### `LocaleListener`
 
-Kernel event listener (priority 20) that sets `$request->setLocale()` on every request. Reads from:
+Kernel event listener (priority configurable via `listener_priority`, defaults to `15`) that sets `$request->setLocale()` on every request. Reads from:
 
 1. `_locale` query parameter
 2. `Accept-Language` header (first matching supported locale)

@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Component\HttpKernel\KernelEvents;
 
 final class LocaleListenerTest extends TestCase
 {
@@ -21,13 +20,6 @@ final class LocaleListenerTest extends TestCase
         $type = $isMain ? HttpKernelInterface::MAIN_REQUEST : HttpKernelInterface::SUB_REQUEST;
 
         return new RequestEvent($kernel, $request, $type);
-    }
-
-    public function testSubscribesToKernelRequest(): void
-    {
-        $events = LocaleListener::getSubscribedEvents();
-
-        self::assertArrayHasKey(KernelEvents::REQUEST, $events);
     }
 
     public function testSetsLocaleFromAcceptLanguageHeader(): void
