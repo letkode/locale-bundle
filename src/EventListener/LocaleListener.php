@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle;
+namespace Letkode\LocaleBundle\EventListener;
 
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle;
+namespace Letkode\LocaleBundle\Applier;
 
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 

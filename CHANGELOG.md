@@ -7,7 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [2.0.0] - 2026-09-23
+
+### Added
+- `Trait\HasEnumTranslationLabelTrait` — adds translator-backed `getLabel()`/`getTranslations()` to string-backed enums, reading `{translationDomain()}.{value}` from a `{domain}.{locale}.yaml` translation file
+- `Trait\HasTranslationsTrait` — moved from `letkode/orm-toolkit-bundle` (`Trait\Entity\HasTranslationsTrait`); adds a `translations` jsonb column for multi-locale field storage. `doctrine/orm` is a `suggest`, not a hard `require` — only needed by apps that use this specific trait
+
+### Changed
+- Reorganized classes by type, matching the convention used by the other `letkode/*` packages (`Trait/`, `Attribute/`, `Exception/`, etc. — not by domain): `LocaleListener` → `EventListener\LocaleListener`, `LocaleProvider` → `Provider\LocaleProvider`, `TranslatableFieldApplier` → `Applier\TranslatableFieldApplier` (all were flat under `Letkode\LocaleBundle\`)
+- Added `symfony/translation-contracts` (`^3.0`) as a require, for `HasEnumTranslationLabelTrait`'s `TranslatorInterface` dependency
+- Added `doctrine/orm` (`^3.0`) to `require-dev`, so this bundle's own CI can test/analyze `HasTranslationsTrait`
+
+### Migration
+- Update imports: `Letkode\LocaleBundle\LocaleProvider` → `Letkode\LocaleBundle\Provider\LocaleProvider`, `Letkode\LocaleBundle\LocaleListener` → `Letkode\LocaleBundle\EventListener\LocaleListener`, `Letkode\LocaleBundle\TranslatableFieldApplier` → `Letkode\LocaleBundle\Applier\TranslatableFieldApplier`
+- If using the old `Letkode\OrmToolkitBundle\Trait\Entity\HasTranslationsTrait` (`letkode/orm-toolkit-bundle`), switch to `Letkode\LocaleBundle\Trait\HasTranslationsTrait` (`letkode/locale-bundle`) — same behavior, moved package. See `letkode/orm-toolkit-bundle`'s own CHANGELOG for the removal.
 
 ---
 

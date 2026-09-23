@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle\Tests;
+namespace Letkode\LocaleBundle\Tests\EventListener;
 
-use Letkode\LocaleBundle\LocaleListener;
+use Letkode\LocaleBundle\EventListener\LocaleListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

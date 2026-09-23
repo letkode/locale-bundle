@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle;
+namespace Letkode\LocaleBundle\Provider;
 
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\RequestStack;

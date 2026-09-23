@@ -8,12 +8,17 @@
         "symfony/config": "^7.0 || ^8.0",
         "symfony/dependency-injection": "^7.0 || ^8.0",
         "symfony/http-foundation": "^7.0 || ^8.0",
-        "symfony/http-kernel": "^7.0 || ^8.0"
+        "symfony/http-kernel": "^7.0 || ^8.0",
+        "symfony/translation-contracts": "^3.0"
     },
     "require-dev": {
+        "doctrine/orm": "^3.0",
         "phpunit/phpunit": "^11",
         "phpstan/phpstan": "^2",
         "friendsofphp/php-cs-fixer": "^3.95"
+    },
+    "suggest": {
+        "doctrine/orm": "To use Trait\\HasTranslationsTrait on Doctrine entities"
     },
     "autoload": {
         "psr-4": {

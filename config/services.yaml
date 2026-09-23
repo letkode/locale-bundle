@@ -9,9 +9,9 @@ services:
         exclude:
             - '../src/LetkodeLocaleBundle.php'
             - '../src/DependencyInjection/'
-            - '../src/LocaleListener.php'
+            - '../src/EventListener/LocaleListener.php'
 
-    Letkode\LocaleBundle\LocaleListener:
+    Letkode\LocaleBundle\EventListener\LocaleListener:
         tags:
             - name: kernel.event_listener
               event: kernel.request

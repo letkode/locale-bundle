@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle\Tests;
+namespace Letkode\LocaleBundle\Tests\Applier;
 
-use Letkode\LocaleBundle\TranslatableFieldApplier;
+use Letkode\LocaleBundle\Applier\TranslatableFieldApplier;
 use PHPUnit\Framework\TestCase;
 
 final class TranslatableFieldApplierTest extends TestCase

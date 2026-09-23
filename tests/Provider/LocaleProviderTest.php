@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Letkode\LocaleBundle\Tests;
+namespace Letkode\LocaleBundle\Tests\Provider;
 
-use Letkode\LocaleBundle\LocaleProvider;
+use Letkode\LocaleBundle\Provider\LocaleProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
