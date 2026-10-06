@@ -23,20 +23,41 @@ return [
 
 ## Configuration
 
-Create `config/packages/letkode_locale.yaml`:
+All options are optional; defaults are shown.
+
+```yaml
+# config/packages/letkode_locale.yaml
+letkode_locale:
+    default_locale: en        # used when Accept-Language matches no supported locale
+    supported_locales: {}     # {code: label}; empty accepts whatever Accept-Language asks for
+    listener_priority: 15     # priority of the kernel.request listener
+```
+
+To get a commented copy of the config in your project:
+
+```bash
+vendor/bin/letkode-publish locale
+```
+
+It writes `config/packages/letkode_locale.yaml` and never overwrites an existing file unless you add `--force`. `--dry-run` shows what it would do.
+
+`supported_locales` is a map of locale code to label:
 
 ```yaml
 letkode_locale:
-    default_locale: '%env(APP_DEFAULT_LOCALE)%'
-    supported_locales: '%env(json:APP_SUPPORTED_LOCALES)%'
-    listener_priority: 15 # optional, defaults to 15
+    supported_locales:
+        en: English
+        es: Español
 ```
 
-Add the corresponding `.env` variables:
+To read the values from the environment, use the usual `%env()%` processors, e.g. `default_locale: '%env(APP_DEFAULT_LOCALE)%'` and `supported_locales: '%env(json:APP_SUPPORTED_LOCALES)%'` with `APP_SUPPORTED_LOCALES={"en":"English","es":"Español"}`.
 
-```dotenv
-APP_DEFAULT_LOCALE=en
-APP_SUPPORTED_LOCALES=["en","es"]
+To override a value in one environment, use `when@<env>`:
+
+```yaml
+when@prod:
+    letkode_locale:
+        default_locale: es
 ```
 
 ---

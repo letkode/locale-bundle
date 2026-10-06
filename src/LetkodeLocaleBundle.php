@@ -15,9 +15,19 @@ final class LetkodeLocaleBundle extends AbstractBundle
     {
         $definition->rootNode()
             ->children()
-                ->scalarNode('default_locale')->defaultValue('en')->end()
-                ->variableNode('supported_locales')->defaultValue([])->end()
-                ->integerNode('listener_priority')->defaultValue(15)->end()
+                ->scalarNode('default_locale')
+                    ->defaultValue('en')
+                    ->info('Locale used when Accept-Language matches none of the supported locales.')
+                ->end()
+                ->variableNode('supported_locales')
+                    ->defaultValue([])
+                    ->info('Accepted locales as {code: label}. Empty accepts whatever Accept-Language asks for.')
+                    ->example(['en' => 'English', 'es' => 'Español'])
+                ->end()
+                ->integerNode('listener_priority')
+                    ->defaultValue(15)
+                    ->info('Priority of the kernel.request listener that sets the locale.')
+                ->end()
             ->end()
         ;
     }

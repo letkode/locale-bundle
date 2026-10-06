@@ -1,0 +1,17 @@
+letkode_locale:
+    # Locale used when the request's Accept-Language matches none of the supported locales.
+    default_locale: en
+
+    # Locales the app accepts, as {code: label}. Empty accepts whatever Accept-Language asks for.
+    supported_locales: {}
+    # supported_locales:
+    #     en: English
+    #     es: Español
+
+    # Priority of the kernel.request listener that sets the locale.
+    listener_priority: 15
+
+# Per-environment override:
+# when@prod:
+#     letkode_locale:
+#         default_locale: es

@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] - 2026-10-06
+
+### Added
+- `extra.letkode.publish` in `composer.json` declares `resources/config/letkode_locale.yaml.dist` as a publishable example config, so `vendor/bin/letkode-publish locale` copies it into the project (see `letkode/config-publisher`).
+- `letkode/config-publisher` is now a `require`; it only ships the `letkode-publish` executable and is never used by the bundle's code.
+- `info()` on every config option, shown by `bin/console config:dump-reference letkode_locale`.
+
+### Removed
+- `recipes/letkode/locale-bundle/1.0/`: it was never published to a recipes repository, so Flex never applied it. Flex registers the bundle from its auto-generated recipe; use `letkode-publish locale` for the config file.
+
+### Fixed
+- README documented `supported_locales` as a list (`["en","es"]`), but `LocaleListener` reads it as a `{code: label}` map (`array_keys`). With a list it matched `0`/`1` instead of the locale codes.
+
+---
+
 ## [2.0.0] - 2026-09-23
 
 ### Added
