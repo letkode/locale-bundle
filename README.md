@@ -36,7 +36,7 @@ letkode_locale:
 To get a commented copy of the config in your project:
 
 ```bash
-vendor/bin/letkode-publish locale
+bin/console letkode:config:publish locale
 ```
 
 It writes `config/packages/letkode_locale.yaml` and never overwrites an existing file unless you add `--force`. `--dry-run` shows what it would do.
